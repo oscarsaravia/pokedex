@@ -7,7 +7,7 @@ export const usePokemonPaginated = () => {
 
     const [pokemonList, setPokemonList] = useState<SimplePokemon[]>([])
     const [isLoading, setIsLoading] = useState(true)
-    const nextPageUrl = useRef("https://pokeapi.co/api/v2/pokemon")
+    const nextPageUrl = useRef("https://pokeapi.co/api/v2/pokemon?limit=40")
 
     useEffect(() => {
         fetchPokemon()

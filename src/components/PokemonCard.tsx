@@ -37,13 +37,13 @@ export const PokemonCard = ({ pokemon }: Props) => {
         }
     }, [])
 
-    const { id, imageUrl, name, color} = pokemon;
+    const { id, imageUrl, name } = pokemon;
     return (
         <TouchableOpacity
             activeOpacity={ 0.9 }
             onPress={ () => navigate('PokemonScreen', {
                 simplePokemon: pokemon,
-                color: color
+                color: colorBg
             })}
         >
             <View style={{
@@ -51,7 +51,7 @@ export const PokemonCard = ({ pokemon }: Props) => {
                     backgroundColor: colorBg 
             }}>
                 <View>
-                    <Text style={ styles.name }>{ `${ name }\n#${ id }` }</Text>
+                    <Text style={ styles.name }>{ `${ name[0].toUpperCase() + name.slice(1) }\n#${ id }` }</Text>
                 </View>
                 <View style={ styles.pokeballContainer }>
                     <Image
